@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+
 
 import re
 import pyperclip as pc
@@ -14,6 +14,8 @@ def main():
     with open(file_name, 'r') as f:
         for idx, line in enumerate(f):
             #print(idx, bool(idx & 1))
+            if len(line) < 1:
+                break
             if bool(idx & 1):
                 replacement = line[:-1]
             else:
@@ -23,12 +25,15 @@ def main():
             #replacement = r'!\2! !\1!'
             #print(replacement, pattern)
             if replacement and pattern:
-                text_out = re.sub(pattern, replacement, text_in)
+                text_out = re.sub(pattern, replacement, text_out)
+                print(f"'{replacement}'", f"'{pattern}'")
+                print(text_out)
+                print('-'*50)
     print(text_out)
     pc.copy(text_out)
 
 
-
 if __name__ == "__main__":
     main()
+    #input()
 
