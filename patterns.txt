@@ -1,20 +1,39 @@
-^\s*([\w_\$]*)\s\s*(\d)\s\s*(timeevent)\s\s*([A-Z_\.]*)\s\s*([\w\s\$]*)\s*$
-\4 \2 \1 \3 \5
+^\s*([\w_\$]*)\s*(\d)\s\s*(timeevent)\s\s*([\w\s\$]*)\s\s*([A-Z_\.]*)\s*$
+\5 \2 \1 \3 \4
 ^\s*(\w+)\s\s*queue\s\s*([\w\$]*)\s*$
 queue \1 \2
 down
 senddown
 ^\s*(up)\s*(.*)\s\s*([A-Z_\.]*)\s*$
 \2 sendup \3
+^\s*([\w_]*)\s\s*(declare)\s\s*([\w_]*)\s*$
+\2 \1 \3
 ^\s*([\w_]*)\s\s*(.*)\s\s*(buffer)\s\s*(.*)\s*$
 \2 \4 bufferit \1
 ^\s*(.*)\s\s*(unpack)\s\s*(.*)\s*$
 \2 \1 \3
 ^\s*(\w+)\s\s*(calccrc)\s\s*(.*)\s*$
 \2 \1 \3
-^\s*(\w+)\s\s*(declare)\s\s*(\w+)\s*$
-\1 \2 \3
 setto
 varset
 ^\s*([\w_]*)\s\s*(if)\s\s*(.*)\s*$
 \2 \3 \1
+current_address
+curr_address
+exchange_type
+exchange
+current_timer
+m_timer
+current_string
+curr_str
+current_buffer
+curr_buffer
+current_queue
+m_queue
+current_quality
+curr_quality
+current_demand
+curr_demand
+(data)_(\d)
+str_\2
+

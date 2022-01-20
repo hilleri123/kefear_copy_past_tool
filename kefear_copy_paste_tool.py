@@ -25,10 +25,14 @@ def main():
             #replacement = r'!\2! !\1!'
             #print(replacement, pattern)
             if replacement and pattern:
-                text_out = re.sub(pattern, replacement, text_out)
-                print(f"'{replacement}'", f"'{pattern}'")
-                print(text_out)
-                print('-'*50)
+                res = ""
+                for out_line in text_out.split('\n'):
+                    out_line = out_line.replace('\r', '')
+                    res += re.sub(pattern, replacement, out_line) + '\n'
+                text_out = res
+                #print(f"'{replacement}'", f"'{pattern}'")
+                #print(text_out)
+                #print('-'*50)
     print(text_out)
     pc.copy(text_out)
 
